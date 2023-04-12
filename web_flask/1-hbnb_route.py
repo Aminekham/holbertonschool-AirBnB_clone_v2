@@ -16,11 +16,13 @@ strict_slashes = False
 
 @app.route('/')
 def hello_hbnb():
+    """Printing Hello HBNB"""
     return("Hello HBNB!")
 
 
 @app.route('/hbnb')
 def hello_hbnb():
+    """Printing HBNB"""
     return("HBNB")
 
 
