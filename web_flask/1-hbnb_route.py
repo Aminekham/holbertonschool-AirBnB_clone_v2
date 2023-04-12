@@ -1,11 +1,9 @@
 #!/usr/bin/python3
-"""
-Having two routes:
-
-first route : /
-second : /hbnb
-
-
+"""Starts a Flask web application.
+The application listens on 0.0.0.0, port 5000.
+Routes:
+    /: Displays 'Hello HBNB!'.
+    /hbnb: Displays 'HBNB'.
 """
 from flask import Flask
 
