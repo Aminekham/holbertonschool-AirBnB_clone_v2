@@ -33,7 +33,8 @@ def hello(text):
     return f"C {a}"
 
 
-# @app.route('/python/', defaults={'text': 'is cool'}, strict_slashes=False)
+# @app.route('/python/', defaults={'is cool'})
+@app.route('/python')
 @app.route('/python/<text>')
 def hello2(text='is cool'):
     b = text.replace("_", " ")
