@@ -45,8 +45,8 @@ def python(text='is cool'):
 
 @app.route('/number/<n>')
 def number(n):
-    if isinstance(n, int):
-        return("{}".format(n))
+    if type(n) is int:
+        return("{} is a number".format(n))
     
 
 if __name__ == "__main__":
