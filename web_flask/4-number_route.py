@@ -18,7 +18,6 @@ app = Flask(__name__)
 
 strict_slashes = False
 
-
 @app.route('/')
 def hello_hbnb():
     return 'Hello HBNB!'
@@ -43,7 +42,7 @@ def python(text='is cool'):
     return f"Python {b}"
 
 
-@app.route('/number/<n>')
+@app.route('/number/<int:n>', strict_slashes = False)
 def number(n):
     if type(n) is int:
         return("{} is a number".format(n))
