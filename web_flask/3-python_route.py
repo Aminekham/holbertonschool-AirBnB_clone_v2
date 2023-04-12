@@ -34,7 +34,7 @@ def hello(text):
 
 
 # @app.route('/python/', defaults={'is cool'})
-@app.route('/python')
+@app.route('/python', strict_slashes = False)
 @app.route('/python/<text>')
 def hello2(text='is cool'):
     b = text.replace("_", " ")
