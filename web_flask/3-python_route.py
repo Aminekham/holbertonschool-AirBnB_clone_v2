@@ -25,21 +25,21 @@ def hello_hbnb():
 
 
 @app.route('/hbnb')
-def hello1():
+def hbnb():
     return "HBNB"
 
 
 @app.route("/c/<text>")
-def hello(text):
-    a=text.replace("_", " ")
+def c(text):
+    a = text.replace("_", " ")
     return f"C {a}"
 
 
 # @app.route('/python/', defaults={'is cool'})
-@app.route('/python', strict_slashes = False)
+@app.route('/python', strict_slashes=False)
 @app.route('/python/<text>')
-def hello2(text='is cool'):
-    b=text.replace("_", " ")
+def python(text='is cool'):
+    b = text.replace("_", " ")
     return f"Python {b}"
 
 
