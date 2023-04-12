@@ -4,8 +4,9 @@ Having two routes
 """
 from flask import Flask
 
-strict_slashes = False
 app = Flask(__name__)
+
+strict_slashes = False
 
 @app.route('/')
 def hello_hbnb():
