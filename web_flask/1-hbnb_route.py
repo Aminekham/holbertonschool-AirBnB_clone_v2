@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 """
-Having two routes
+Having two routes:
+
+first route : /
+second : /hbnb
 """
 from flask import Flask
 
