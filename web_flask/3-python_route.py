@@ -1,41 +1,44 @@
 #!/usr/bin/python3
-"""a second routing variable"""
+"""
+Write a script that starts a Flask web application:
+Your web application must be listening on 0.0.0.0, port 5000
+Routes:
+/: display “Hello HBNB!”
+/hbnb: display “HBNB”
+/c/<text>: display “C ”, followed by the value of the text
+variable (replace underscore _ symbols with a space )
+/python/<text>: display “Python ”, followed by the value
+of the text variable (replace underscore _ symbols with a space )
+The default value of text is “is cool”
+"""
 from flask import Flask
+
 
 app = Flask(__name__)
 
 strict_slashes = False
-
-
 @app.route('/')
-def hello_HBNB():
-    """This is a route that maps the root URL to a view function named hello_HBNB(), which returns the string "Hello HBNB!" """
-    return("Hello HBNB!")
+def hello_hbnb():
+    return 'Hello HBNB!'
 
 
 @app.route('/hbnb')
-def hbnb():
-    """This is a route that maps the URL "/hbnb" to a view function named hbnb(), which returns the string "HBNB"."""
-    return("HBNB")
+def hello1():
+    return "HBNB"
 
 
-@app.route('/c/<text>')
-def text(text):
-    """This is a route that maps URLs with a format of "/c/<text>" to a view function named text(), which takes in a variable text and returns a 
-    string that begins with "C " followed by the value of text with underscores replaced with spaces."""
-    t = text.replace("_", " ")
-    return("C {}".format(t))
+@app.route("/c/<text>")
+def hello(text):
+    a = text.replace("_", " ")
+    return f"C {a}"
 
 
+# @app.route('/python/', defaults={'text': 'is cool'}, strict_slashes=False)
 @app.route('/python/<text>')
-def text(text = 'is cool'):
-    """This is a route that maps URLs with a format of "/python/<text>" to a view function named text(), 
-    which takes in an optional variable 
-    text (with a default value of "is cool") and returns a string that begins with "C " 
-    followed by the value of text with underscores replaced with spaces."""
-    t = text.replace("_", " ")
-    return("C {}".format(t))
+def hello2(text='is cool'):
+    b = text.replace("_", " ")
+    return f"Python {b}"
 
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port='5000')
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=5000)
