@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+First webapp using flask 
+"""
 from flask import Flask
 
 app = Flask(__name__)
@@ -6,7 +9,6 @@ app = Flask(__name__)
 strict_slashes = False
 @app.route("/")
 def hello_world():
-    #this is our first webapp using flask
     return("Hello HBNB!")
 
 if __name__ ==  '__main__':
