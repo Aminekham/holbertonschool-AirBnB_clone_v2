@@ -17,6 +17,8 @@ from flask import Flask
 app = Flask(__name__)
 
 strict_slashes = False
+
+
 @app.route('/')
 def hello_hbnb():
     return 'Hello HBNB!'
@@ -29,7 +31,7 @@ def hello1():
 
 @app.route("/c/<text>")
 def hello(text):
-    a = text.replace("_", " ")
+    a=text.replace("_", " ")
     return f"C {a}"
 
 
@@ -37,7 +39,7 @@ def hello(text):
 @app.route('/python', strict_slashes = False)
 @app.route('/python/<text>')
 def hello2(text='is cool'):
-    b = text.replace("_", " ")
+    b=text.replace("_", " ")
     return f"Python {b}"
 
 
