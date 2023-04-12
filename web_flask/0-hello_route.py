@@ -6,6 +6,9 @@ app = Flask(__name__)
 strict_slashes = False
 @app.route("/")
 def hello_world():
+    """
+        This module is our first web app using flask 
+    """
     return("Hello HBNB!")
 
 if __name__ ==  '__main__':
