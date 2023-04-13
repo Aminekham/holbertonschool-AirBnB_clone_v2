@@ -12,7 +12,7 @@ def states_list():
     states = dict()
     states = storage.all(state)
     final_list = list()
-    final_list = states.values()
+    final_list = sorted(states.values())
     return(render_templates('7-states_list.html', states = final_list))
 
 
