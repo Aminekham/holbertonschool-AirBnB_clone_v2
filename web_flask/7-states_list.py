@@ -3,14 +3,13 @@
 from flask import Flask
 from flask import render_templates
 from models import storage
-
 app = Flask(__name__)
 
 
 @app.route('/stetes_list', strict_slashes = False)
 def states_list():
     states = dict()
-    states = storage.all(state)
+    states = storage.all(State)
     final_list = list()
     final_list = sorted(states.values())
     return(render_templates('7-states_list.html', states = final_list))
@@ -21,4 +20,4 @@ def close():
     storage.close()
 
 if __name__ == '__main__':
-    app.run(host=0.0.0.0, port=5000)
+    app.run(host='0.0.0.0', port='5000')
