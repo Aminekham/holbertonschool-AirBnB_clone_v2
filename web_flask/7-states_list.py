@@ -18,7 +18,7 @@ def states_list():
 
 @app.teardown_appcontext()
 def close():
-    """closing the sqlalchamy connection"""
+    """closing the sqlalchamy connection."""
     storage.close()
 
 if __name__ == '__main__':
