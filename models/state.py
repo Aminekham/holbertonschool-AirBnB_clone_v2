@@ -17,17 +17,17 @@ class State(BaseModel, Base):
     else:
         name = ""
 
-        @property.getter
+        @property
         def cities(self):
-            """Citties getter."""
+            """getting cities related to the state"""
             from models.city import City
             from models import storage
             cities = storage.all(City)
-            linked_cities = []
+            my_all = []
             for city in cities:
                 if cities[city].state_id == self.id:
-                    linked_cities.append(cities[city])
-            return linked_cities
+                    my_all.append(cities[city])
+            return(my_all)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
