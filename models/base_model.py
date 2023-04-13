@@ -4,7 +4,6 @@ Contains class BaseModel
 """
 
 from datetime import datetime
-import models
 from os import getenv
 import uuid
 from sqlalchemy.ext.declarative import declarative_base
@@ -49,8 +48,8 @@ class BaseModel:
     def save(self):
         """updates the attribute 'updated_at' with the current datetime"""
         self.updated_at = datetime.utcnow()
-        models.storage.new(self)
-        models.storage.save()
+        self.storage.new(self)
+        self.storage.save()
 
     def to_dict(self):
         """returns a dictionary containing all keys/values of the instance"""
