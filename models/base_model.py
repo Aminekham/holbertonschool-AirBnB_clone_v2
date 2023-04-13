@@ -13,7 +13,7 @@ time = "%Y-%m-%dT%H:%M:%S.%f"
 
 
 Base = declarative_base()
-class BaseModel(Base):
+class BaseModel():
     """The BaseModel class from which future classes will be derived"""
 
     id = Column(String(60), nullable = False, primary_key =  True)
