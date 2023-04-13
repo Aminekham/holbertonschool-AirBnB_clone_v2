@@ -13,7 +13,7 @@ time = "%Y-%m-%dT%H:%M:%S.%f"
 
 
 Base = declarative_base()
-class BaseModel:
+class BaseModel(Base):
     """The BaseModel class from which future classes will be derived"""
 
     id = Column(String(60), nullable = False, primary_key =  True)
@@ -65,4 +65,4 @@ class BaseModel:
 
     def delete(self):
         """delete the current instance from the storage"""
-        models.storage.delete(self)
+        self.storage.delete(self)
