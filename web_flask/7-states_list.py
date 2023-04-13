@@ -8,6 +8,7 @@ app = Flask(__name__)
 
 @app.route('/stetes_list', strict_slashes = False)
 def states_list():
+    """creating and showing in html the states list."""
     states = dict()
     states = storage.all(State)
     final_list = list()
@@ -17,6 +18,7 @@ def states_list():
 
 @app.teardown_appcontext()
 def close():
+    """closing the sqlalchamy connection"""
     storage.close()
 
 if __name__ == '__main__':
