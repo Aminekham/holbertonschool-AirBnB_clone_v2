@@ -1,25 +1,23 @@
 #!/usr/bin/python3
-
-"""the first routes"""
-
+"""First webapp with two routes using flask"""
 from flask import Flask
 
 app = Flask(__name__)
 
-# route page
+strict_slashes = False
 
 
-@app.route("/", strict_slashes=False)
-def hello():
-    return "Hello HBNB!"
+@app.route('/')
+def hello_hbnb():
+    """Printing Hello HBNB"""
+    return("Hello HBNB!")
 
-# hbnb page
 
-
-@app.route("/hbnb", strict_slashes=False)
-def hbnb():
-    return "HBNB"
+@app.route('/hbnb')
+def hello_hbnb():
+    """Printing HBNB"""
+    return("HBNB")
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host='0.0.0.0', port='5000')
